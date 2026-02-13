@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -286,13 +287,20 @@ export default function Dashboard() {
 
                                             {/* Image Area */}
                                             <div className="aspect-square bg-slate-900 relative group overflow-hidden flex items-center justify-center border-t border-slate-800">
-                                                {productImage && !imageError ? (
+                                                {ad.generated_image_url || (productImage && !imageError) ? (
                                                     <img
-                                                        src={productImage}
-                                                        alt="Original Product"
+                                                        src={ad.generated_image_url || productImage}
+                                                        alt="Ad Creative"
                                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                         loading="lazy"
-                                                        onError={() => setImageError(true)}
+                                                        onError={(e) => {
+                                                            // Prevent infinite loop if fallback fails too
+                                                            if (ad.generated_image_url && e.currentTarget.src !== productImage) {
+                                                                e.currentTarget.src = productImage || '';
+                                                            } else {
+                                                                setImageError(true);
+                                                            }
+                                                        }}
                                                     />
                                                 ) : null}
 
