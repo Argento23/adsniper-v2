@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Bot, Target, Zap, TrendingUp, CheckCircle, ShieldAd, PlayCircle } from 'lucide-react';
+import { ArrowRight, Bot, Target, Zap, TrendingUp, CheckCircle, Shield, PlayCircle } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -89,7 +89,7 @@ export default function Home() {
             {/* Feature 1 */}
             <div className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 transition-all hover:bg-slate-900 group">
               <div className="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
-                <ShieldAd className="w-8 h-8" />
+                <Shield className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">Ad Intelligence</h3>
               <p className="text-slate-400 leading-relaxed">Espía legalmente a tu competencia. Descubre qué creativos están escalando y por qué.</p>
@@ -145,4 +145,3 @@ export default function Home() {
     </div>
   );
 }
-
