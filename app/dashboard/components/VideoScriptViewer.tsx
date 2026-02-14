@@ -1,6 +1,6 @@
 'use client';
 
-import { Copy, Video, Play, Music, Check } from 'lucide-react';
+import { FaRegCopy, FaVideo, FaPlay, FaMusic, FaCheck } from 'react-icons/fa';
 import { useState } from 'react';
 
 interface ScriptSection {
@@ -32,7 +32,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
     if (!scripts || scripts.length === 0) {
         return (
             <div className="text-center py-12 border border-slate-800 rounded-3xl bg-slate-900/30">
-                <Video className="w-12 h-12 mx-auto mb-4 text-slate-600" />
+                <FaVideo className="w-12 h-12 mx-auto mb-4 text-slate-600" />
                 <p className="text-slate-400">Genera una campaña para ver los guiones de video.</p>
             </div>
         );
@@ -53,7 +53,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
                             <span className="text-xs text-slate-500 uppercase tracking-wider font-bold">{script.angle} Angle</span>
                         </div>
                         <div className="p-2 bg-slate-900 rounded-lg border border-slate-800 text-slate-400">
-                            <Video className="w-5 h-5" />
+                            <FaVideo className="w-5 h-5" />
                         </div>
                     </div>
 
@@ -61,7 +61,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
                     <div className="p-6 space-y-6">
                         {script.audio_suggestion && (
                             <div className="flex items-center gap-3 p-3 bg-purple-900/20 text-purple-200 rounded-lg border border-purple-500/20 text-sm">
-                                <Music className="w-4 h-4" />
+                                <FaMusic className="w-4 h-4" />
                                 <span>🎵 Audio: {script.audio_suggestion}</span>
                             </div>
                         )}
@@ -88,7 +88,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
                             }}
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${copiedIndex === `full-${i}` ? 'bg-emerald-500 text-white' : 'bg-white text-slate-900 hover:bg-emerald-400'}`}
                         >
-                            {copiedIndex === `full-${i}` ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                            {copiedIndex === `full-${i}` ? <FaCheck className="w-4 h-4" /> : <FaRegCopy className="w-4 h-4" />}
                             {copiedIndex === `full-${i}` ? 'Copiado!' : 'Copiar Guion'}
                         </button>
                     </div>
