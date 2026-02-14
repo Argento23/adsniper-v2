@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, User, Palette, MessageSquare, Globe, Link as LinkIcon, Image as ImageIcon } from 'lucide-react';
+import { FaSave, FaUser, FaPalette, FaCommentDots, FaGlobe, FaLink, FaImage } from 'react-icons/fa';
 
 interface BrandData {
     name: string;
@@ -56,7 +56,7 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
                         {/* LEFT COLUMN: Visual Identity */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
-                                <Palette className="w-5 h-5 text-emerald-400" /> Identidad Visual
+                                <FaPalette className="w-5 h-5 text-emerald-400" /> Identidad Visual
                             </h3>
 
                             <div className="space-y-4">
@@ -74,7 +74,7 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
 
                                 <div>
                                     <label className="block text-sm font-medium text-slate-300 mb-1 flex items-center gap-2">
-                                        <Globe className="w-4 h-4 text-slate-500" /> Sitio Web (Opcional)
+                                        <FaGlobe className="w-4 h-4 text-slate-500" /> Sitio Web (Opcional)
                                     </label>
                                     <input
                                         type="url"
@@ -87,7 +87,7 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
 
                                 <div>
                                     <label className="block text-sm font-medium text-slate-300 mb-1 flex items-center gap-2">
-                                        <LinkIcon className="w-4 h-4 text-slate-500" /> URL del Logo (PNG/SVG)
+                                        <FaLink className="w-4 h-4 text-slate-500" /> URL del Logo (PNG/SVG)
                                     </label>
                                     <div className="flex gap-4">
                                         <input
@@ -101,7 +101,7 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
                                             {logoPreview ? (
                                                 <img src={logoPreview} alt="Logo" className="w-10 h-10 object-contain" onError={() => setLogoPreview('')} />
                                             ) : (
-                                                <ImageIcon className="w-6 h-6 text-slate-300" />
+                                                <FaImage className="w-6 h-6 text-slate-300" />
                                             )}
                                         </div>
                                     </div>
@@ -125,13 +125,13 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
                         {/* RIGHT COLUMN: Psychology & Avatar */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold text-white flex items-center gap-2 border-b border-slate-800 pb-2">
-                                <User className="w-5 h-5 text-purple-400" /> Psicología & Avatar
+                                <FaUser className="w-5 h-5 text-purple-400" /> Psicología & Avatar
                             </h3>
 
                             <div className="space-y-4">
                                 <div>
                                     <label className="block text-sm font-medium text-slate-300 mb-2 flex items-center gap-2">
-                                        <MessageSquare className="w-4 h-4 text-cyan-400" /> Tono de Voz
+                                        <FaCommentDots className="w-4 h-4 text-cyan-400" /> Tono de Voz
                                     </label>
                                     <div className="grid grid-cols-2 gap-2">
                                         {['Profesional', 'Divertido', 'Urgente', 'Lujoso', 'Amigable', 'Agresivo'].map((t) => (
@@ -174,7 +174,7 @@ export default function BrandSetup({ onSave, existingData }: BrandSetupProps) {
                             disabled={!name || !avatar}
                             className="w-full bg-gradient-to-r from-emerald-500 to-cyan-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 text-lg"
                         >
-                            <Save className="w-6 h-6" /> Guardar Identidad Completa
+                            <FaSave className="w-6 h-6" /> Guardar Identidad Completa
                         </button>
                     </div>
                 </form>
