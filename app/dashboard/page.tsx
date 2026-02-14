@@ -276,7 +276,7 @@ export default function Dashboard() {
                                                     <div className="leading-tight">
                                                         <p className="text-xs font-bold flex items-center">
                                                             {brand?.name || 'Your Brand'}
-                                                            <span className="ml-1 bg-blue-500 text-white rounded-full p-[1px]"><Check className="w-2 h-2" /></span>
+                                                            <span className="ml-1 bg-blue-500 text-white rounded-full p-[1px]"><FaCheck className="w-2 h-2" /></span>
                                                         </p>
                                                         <p className="text-[10px] text-slate-500 font-medium">Sponsored</p>
                                                     </div>
