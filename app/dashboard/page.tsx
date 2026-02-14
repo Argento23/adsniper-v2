@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Sparkles, Layers, Zap, Flame, Loader2, ArrowRight, ExternalLink, Heart, MessageCircle, Send, Bookmark, Copy, Check, Globe, ImageOff, Settings, Video, Image as ImageIcon } from 'lucide-react';
+import { FaStar, FaLayerGroup, FaBolt, FaFire, FaSpinner, FaArrowRight, FaExternalLinkAlt, FaHeart, FaComments, FaPaperPlane, FaBookmark, FaRegCopy, FaCheck, FaGlobe, FaImage, FaCog, FaVideo } from 'react-icons/fa';
 import { UserButton } from "@clerk/nextjs";
 import BrandSetup from './components/BrandSetup';
 import VideoScriptViewer from './components/VideoScriptViewer';
@@ -132,7 +132,7 @@ export default function Dashboard() {
                 <header className="flex justify-between items-center py-4">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-                            <Zap className="w-6 h-6 text-white" fill="white" />
+                            <FaBolt className="w-6 h-6 text-white" fill="white" />
                         </div>
                         <h1 className="text-2xl font-bold tracking-tight">
                             AdSniper <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">AI</span>
@@ -325,11 +325,11 @@ export default function Dashboard() {
                                             {/* Action Bar */}
                                             <div className="flex justify-between items-center p-3 text-slate-800">
                                                 <div className="flex gap-4">
-                                                    <Heart className="w-6 h-6 hover:text-red-500 transition-colors cursor-pointer" />
-                                                    <MessageCircle className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
-                                                    <Send className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
+                                                    <FaHeart className="w-6 h-6 hover:text-red-500 transition-colors cursor-pointer" />
+                                                    <FaComments className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
+                                                    <FaPaperPlane className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
                                                 </div>
-                                                <Bookmark className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
+                                                <FaBookmark className="w-6 h-6 hover:text-slate-600 transition-colors cursor-pointer" />
                                             </div>
 
                                             {/* Copy Area */}
@@ -347,7 +347,7 @@ export default function Dashboard() {
                                                 onClick={() => copyToClipboard(ad.primary_text, i)}
                                                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${copiedIndex === i ? 'bg-emerald-500 text-white' : 'bg-slate-800 text-slate-300 hover:bg-slate-700'}`}
                                             >
-                                                {copiedIndex === i ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                                                {copiedIndex === i ? <FaCheck className="w-4 h-4" /> : <FaRegCopy className="w-4 h-4" />}
                                                 {copiedIndex === i ? 'Copiado!' : 'Copiar Texto'}
                                             </button>
                                         </div>
