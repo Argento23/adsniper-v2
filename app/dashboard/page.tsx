@@ -145,7 +145,7 @@ export default function Dashboard() {
                                 onClick={() => setView('setup')}
                                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-medium text-slate-400 hover:text-white hover:border-slate-700 transition-colors"
                             >
-                                <Settings className="w-3 h-3" />
+                                <FaCog className="w-3 h-3" />
                                 {brand.name}
                             </button>
                         )}
@@ -174,7 +174,7 @@ export default function Dashboard() {
                                 <div className="relative flex flex-col md:flex-row gap-2 items-center bg-slate-950 rounded-2xl p-2">
                                     <div className="flex-1 w-full relative">
                                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
-                                            <ExternalLink className="w-5 h-5" />
+                                            <FaExternalLinkAlt className="w-5 h-5" />
                                         </div>
                                         <input
                                             type="text"
@@ -187,7 +187,7 @@ export default function Dashboard() {
 
                                     {/* Language Toggle */}
                                     <div className="flex items-center gap-2 bg-slate-900 rounded-xl px-3 py-2 border border-slate-800">
-                                        <Globe className="w-4 h-4 text-slate-400" />
+                                        <FaGlobe className="w-4 h-4 text-slate-400" />
                                         <select
                                             value={language}
                                             onChange={(e) => setLanguage(e.target.value)}
@@ -204,9 +204,9 @@ export default function Dashboard() {
                                         className="w-full md:w-auto bg-white text-slate-950 hover:bg-emerald-400 disabled:opacity-50 disabled:cursor-not-allowed font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95 whitespace-nowrap"
                                     >
                                         {loading ? (
-                                            <> <Loader2 className="animate-spin w-5 h-5" /> Creando... </>
+                                            <> <FaSpinner className="animate-spin w-5 h-5" /> Creando... </>
                                         ) : (
-                                            <> <Sparkles className="w-5 h-5 text-emerald-600 md:text-inherit" /> GENERAR </>
+                                            <> <FaStar className="w-5 h-5 text-emerald-600 md:text-inherit" /> GENERAR </>
                                         )}
                                     </button>
                                 </div>
@@ -229,13 +229,13 @@ export default function Dashboard() {
                                         onClick={() => setActiveTab('ads')}
                                         className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'ads' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-900/20' : 'text-slate-400 hover:text-white hover:bg-slate-800'}`}
                                     >
-                                        <ImageIcon className="w-4 h-4" /> Visual Ads
+                                        <FaImage className="w-4 h-4" /> Visual Ads
                                     </button>
                                     <button
                                         onClick={() => setActiveTab('scripts')}
                                         className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'scripts' ? 'bg-purple-600 text-white shadow-lg shadow-purple-900/20' : 'text-slate-400 hover:text-white hover:bg-slate-800'}`}
                                     >
-                                        <Video className="w-4 h-4" /> Video Scripts
+                                        <FaVideo className="w-4 h-4" /> Video Scripts
                                     </button>
                                 </div>
                             </div>
@@ -306,7 +306,7 @@ export default function Dashboard() {
                                                 {(!productImage || imageError) && (
                                                     <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10 bg-slate-900">
                                                         <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center mb-4 shadow-lg border border-slate-700">
-                                                            <ImageOff className="w-8 h-8 text-slate-500" />
+                                                            <FaImage className="w-8 h-8 text-slate-500" />
                                                         </div>
                                                         <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-1">Imagen Protegida</p>
                                                     </div>
@@ -318,7 +318,7 @@ export default function Dashboard() {
 
                                                 <div className={`absolute bottom-0 left-0 w-full py-2 px-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-t border-slate-100 z-20`}>
                                                     <span className="text-xs font-bold text-slate-900">Shop Now</span>
-                                                    <ArrowRight className="w-3 h-3 text-slate-900" style={{ color: brand?.primary_color || '#0f172a' }} />
+                                                    <FaArrowRight className="w-3 h-3 text-slate-900" style={{ color: brand?.primary_color || '#0f172a' }} />
                                                 </div>
                                             </div>
 
@@ -360,7 +360,7 @@ export default function Dashboard() {
                         {/* Placeholder State */}
                         {!loading && ads.length === 0 && !error && (
                             <div className="text-center py-20 opacity-30 mt-10 border-2 border-dashed border-slate-800 rounded-3xl mx-auto max-w-2xl">
-                                <Layers className="w-16 h-16 mx-auto mb-4 text-slate-600" />
+                                <FaLayerGroup className="w-16 h-16 mx-auto mb-4 text-slate-600" />
                                 <p className="text-xl font-bold text-slate-500">Esperando URL...</p>
                                 <p className="text-sm">Pega un link de Shopify arriba para comenzar.</p>
                             </div>
