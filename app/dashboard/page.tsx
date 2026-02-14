@@ -76,7 +76,8 @@ export default function Dashboard() {
             setAds(finalAds);
 
             // Handle Scripts (Check if API returns them, otherwise use Mock for demo)
-            if (data.scripts && Array.isArray(data.scripts)) {
+            // Handle Scripts (Check if API returns them, otherwise use Mock for demo)
+            if (data.scripts && Array.isArray(data.scripts) && data.scripts.length > 0) {
                 setScripts(data.scripts);
             } else {
                 // FALLBACK MOCK FOR DEMO (Since n8n might not return scripts yet)
