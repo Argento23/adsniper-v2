@@ -292,6 +292,7 @@ export default function Dashboard() {
                                                         alt="Ad Creative"
                                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                                         loading="lazy"
+                                                        referrerPolicy="no-referrer"
                                                         onError={(e) => {
                                                             // Prevent infinite loop if fallback fails too
                                                             if (ad.generated_image_url && e.currentTarget.src !== productImage) {
