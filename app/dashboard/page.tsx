@@ -6,6 +6,31 @@ import { UserButton } from "@clerk/nextjs";
 import BrandSetup from './components/BrandSetup';
 import VideoScriptViewer from './components/VideoScriptViewer';
 
+const MOCK_SCRIPTS = [
+    {
+        title: "Viral Hook Strategy",
+        angle: "Problem/Agitation",
+        audio_suggestion: "Trending 'Suspense' Audio",
+        sections: [
+            { type: "Hook", content: "Stop scrolling if you are tired of [Problem related to Product]...", duration: "3s" },
+            { type: "Body", content: "I found this game-changer. It literally solves the problem in seconds.", duration: "15s" },
+            { type: "CTA", content: "Get yours now at the link in bio before it's gone!", duration: "5s" }
+        ]
+    },
+    {
+        title: "ASMR Unboxing",
+        angle: "Satisfying/Visual",
+        audio_suggestion: "Lo-fi Chill Beat",
+        sections: [
+            { type: "Hook", content: "(No talking) *Sound of package opening*", duration: "5s" },
+            { type: "Body", content: "Look at this quality. The texture is insane. Truly nailed it.", duration: "10s" },
+            { type: "CTA", content: "Link in bio to shop.", duration: "3s" }
+        ]
+    }
+];
+
+const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1557804506-c96933be6025?auto=format&fit=crop&w=800&q=80"; // Abstract Blue/Purple
+
 export default function Dashboard() {
     // Brand State
     const [brand, setBrand] = useState<any>(null);
@@ -80,33 +105,13 @@ export default function Dashboard() {
             if (data.scripts && Array.isArray(data.scripts) && data.scripts.length > 0) {
                 setScripts(data.scripts);
             } else {
-                // FALLBACK MOCK FOR DEMO (Since n8n might not return scripts yet)
-                setScripts([
-                    {
-                        title: "Viral Hook Strategy",
-                        angle: "Problem/Agitation",
-                        audio_suggestion: "Trending 'Suspense' Audio",
-                        sections: [
-                            { type: "Hook", content: "Stop scrolling if you are tired of [Problem related to Product]...", duration: "3s" },
-                            { type: "Body", content: "I found this game-changer from " + (brand?.name || "Us") + ". It literally solves [Benefit] in seconds.", duration: "15s" },
-                            { type: "CTA", content: "Get yours now at the link in bio before it's gone!", duration: "5s" }
-                        ]
-                    },
-                    {
-                        title: "ASMR Unboxing",
-                        angle: "Satisfying/Visual",
-                        audio_suggestion: "Lo-fi Chill Beat",
-                        sections: [
-                            { type: "Hook", content: "(No talking) *Sound of package opening*", duration: "5s" },
-                            { type: "Body", content: "Look at this quality. The texture is insane. " + (brand?.name || "Our Brand") + " really nailed it.", duration: "10s" },
-                            { type: "CTA", content: "Link in bio to shop.", duration: "3s" }
-                        ]
-                    }
-                ]);
+                setScripts(MOCK_SCRIPTS);
             }
 
         } catch (err: any) {
             setError(err.message);
+            // Default to mock scripts on error so user sees something
+            setScripts(MOCK_SCRIPTS);
         } finally {
             setLoading(false);
         }
@@ -297,7 +302,9 @@ export default function Dashboard() {
                                                         onError={(e) => {
                                                             // Prevent infinite loop if fallback fails too
                                                             if (ad.generated_image_url && e.currentTarget.src !== productImage) {
-                                                                e.currentTarget.src = productImage || '';
+                                                                e.currentTarget.src = productImage || FALLBACK_IMAGE;
+                                                            } else if (e.currentTarget.src !== FALLBACK_IMAGE) {
+                                                                e.currentTarget.src = FALLBACK_IMAGE;
                                                             } else {
                                                                 setImageError(true);
                                                             }
