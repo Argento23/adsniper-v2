@@ -67,7 +67,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
                         )}
 
                         <div className="space-y-4">
-                            {script.sections.map((section, idx) => (
+                            {script.sections?.map((section, idx) => (
                                 <div key={idx} className="relative pl-6 border-l-2 border-slate-800 hover:border-emerald-500/50 transition-colors pb-1">
                                     <div className="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-slate-800 group-hover:bg-emerald-500 transition-colors"></div>
                                     <p className="text-xs text-slate-500 uppercase tracking-widest font-bold mb-1">{section.type} {section.duration && `• ${section.duration}`}</p>
@@ -83,7 +83,7 @@ export default function VideoScriptViewer({ scripts }: VideoScriptViewerProps) {
                     <div className="p-4 bg-slate-950 border-t border-slate-800 flex justify-end">
                         <button
                             onClick={() => {
-                                const fullText = script.sections.map(s => `[${s.type}] ${s.content}`).join('\n\n');
+                                const fullText = (script.sections || []).map(s => `[${s.type}] ${s.content}`).join('\n\n');
                                 copyToClipboard(fullText, `full-${i}`);
                             }}
                             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all ${copiedIndex === `full-${i}` ? 'bg-emerald-500 text-white' : 'bg-white text-slate-900 hover:bg-emerald-400'}`}
