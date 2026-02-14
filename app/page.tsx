@@ -1,6 +1,6 @@
 
 import Link from 'next/link';
-import { ArrowRight, Bot, Target, Zap, TrendingUp, CheckCircle, Shield, PlayCircle } from 'lucide-react';
+import { FaArrowRight, FaRobot, FaBullseye, FaBolt, FaChartLine, FaCheckCircle, FaShieldAlt, FaPlay } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20">
-              <Target className="w-6 h-6 text-white" />
+              <FaBullseye className="w-6 h-6 text-white" />
             </div>
             <span className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">AdSniper</span>
           </div>
@@ -23,7 +23,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <Link href="/sign-in" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Login</Link>
             <Link href="/dashboard" className="px-5 py-2 bg-white text-black text-sm font-bold rounded-full hover:bg-emerald-400 hover:scale-105 transition-all flex items-center gap-2">
-              Launch App <ArrowRight className="w-4 h-4" />
+              Launch App <FaArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-bold tracking-wider uppercase mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <Zap className="w-3 h-3" /> AI-Powered Ad Intelligence
+            <FaBolt className="w-3 h-3" /> AI-Powered Ad Intelligence
           </div>
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
@@ -51,11 +51,11 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 animate-in fade-in slide-in-from-bottom-10 duration-700 delay-300">
             <Link href="/dashboard" className="w-full md:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black text-lg font-bold rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40 flex items-center justify-center gap-2">
-              <Bot className="w-5 h-5" />
+              <FaRobot className="w-5 h-5" />
               Try AdSniper Free
             </Link>
             <button className="w-full md:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-lg font-bold rounded-full transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
-              <PlayCircle className="w-5 h-5" />
+              <FaPlay className="w-5 h-5" />
               Watch Demo
             </button>
           </div>
@@ -89,7 +89,7 @@ export default function Home() {
             {/* Feature 1 */}
             <div className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-emerald-500/30 transition-all hover:bg-slate-900 group">
               <div className="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
-                <Shield className="w-8 h-8" />
+                <FaShieldAlt className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">Ad Intelligence</h3>
               <p className="text-slate-400 leading-relaxed">Espía legalmente a tu competencia. Descubre qué creativos están escalando y por qué.</p>
@@ -98,7 +98,7 @@ export default function Home() {
             {/* Feature 2 */}
             <div className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-purple-500/30 transition-all hover:bg-slate-900 group">
               <div className="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
-                <Bot className="w-8 h-8" />
+                <FaRobot className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">AI Copywriter</h3>
               <p className="text-slate-400 leading-relaxed">Genera guiones de video y textos persuasivos basados en tu identidad de marca única.</p>
@@ -107,7 +107,7 @@ export default function Home() {
             {/* Feature 3 */}
             <div className="p-8 rounded-3xl bg-slate-900/50 border border-white/5 hover:border-cyan-500/30 transition-all hover:bg-slate-900 group">
               <div className="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 text-cyan-400 group-hover:scale-110 transition-transform">
-                <TrendingUp className="w-8 h-8" />
+                <FaChartLine className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold mb-4">Viral Angles</h3>
               <p className="text-slate-400 leading-relaxed">Nuestro motor detecta tendencias virales y adapta tu producto a lo que funciona HOY.</p>
@@ -123,11 +123,11 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-extrabold mb-8">Ready to dominate your niche?</h2>
           <p className="text-xl text-slate-400 mb-12">Join 1,000+ marketers using AdSniper to scale their brands.</p>
           <Link href="/dashboard" className="inline-flex items-center gap-3 px-10 py-5 bg-white text-black text-xl font-bold rounded-full hover:bg-emerald-400 transition-all hover:scale-105 shadow-xl shadow-emerald-500/10">
-            Start Free Trial <ArrowRight className="w-6 h-6" />
+            Start Free Trial <FaArrowRight className="w-6 h-6" />
           </Link>
           <div className="mt-8 flex items-center justify-center gap-6 text-slate-500 text-sm font-medium">
-            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> No credit card required</span>
-            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-emerald-500" /> 7-day free trial</span>
+            <span className="flex items-center gap-2"><FaCheckCircle className="w-4 h-4 text-emerald-500" /> No credit card required</span>
+            <span className="flex items-center gap-2"><FaCheckCircle className="w-4 h-4 text-emerald-500" /> 7-day free trial</span>
           </div>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function Home() {
       <footer className="border-t border-white/10 py-12 bg-black">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-2 opacity-50">
-            <Target className="w-5 h-5" />
+            <FaBullseye className="w-5 h-5" />
             <span className="font-bold">AdSniper SaaS</span>
           </div>
           <p className="text-slate-600 text-sm">© 2026 AdSniper. Powered by GenerArise.</p>
