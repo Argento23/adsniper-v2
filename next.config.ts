@@ -1,4 +1,5 @@
 
+// Updated at: Thu Feb 13 23:40:00 -03 2026 (Force Re-deploy)
 const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
